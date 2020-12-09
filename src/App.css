@@ -39,6 +39,9 @@ body{
 .active{
     color: white;
 }
+.inActive{
+    color:rgba(255, 255, 255, 0.548);
+}
 
 .ms {
     font-size: 50px;

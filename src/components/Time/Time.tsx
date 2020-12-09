@@ -1,13 +1,27 @@
 import React from 'react'
 
-export const Time = () => {
+type Props = {
+    Time : any;
+};
+
+export const Time: React.FC<Props> = ({Time,}) => {
     return (
         <div className="timeContainer">
             <p className="time">
-                <span className="active">01:</span>
-                <span className="active">23:</span>
-                <span className="active">07</span>
-                <span className="ms active">.77</span></p>
+                <span className={Time.h === 0 ? "inActive" : "active"}>
+                    {Time.h >= 10 ? Time.h : "0" + Time.h}:
+                </span>
+                <span className={Time.m === 0 && Time.h === 0 ? "inActive" : "active"}>
+                    {Time.m >= 10 ? Time.m : "0" + Time.m}:
+                </span>
+                <span className={Time.s === 0 && Time.m === 0 && Time.h === 0 ? "inActive" : "active"}>
+                    {Time.s >= 10 ? Time.s : "0" + Time.s}.
+                </span>
+                <span className={Time.ms === 0 && Time.s === 0 && Time.m === 0 && Time.h === 0 ? "ms inActive" : "ms active"}>
+                    {Time.ms >= 100 ? Time.ms : Time.ms >= 10 ? "0" + Time.ms : "00" + Time.ms}
+                </span>
+            </p>
         </div>
     )
 }
+
