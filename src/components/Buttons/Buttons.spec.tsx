@@ -34,3 +34,14 @@ describe("Footer", () => {
     expect(container.find("button").length).toEqual(2)
   })
 })
+
+describe("Footer", () => {
+  let container:any;
+  beforeEach(() => (container = shallow(<Buttons StatusR={"completed"} ResumeR={()=>{}} ResetR={()=>{}} StopR={()=>{}} StartR={()=>{}}/>)))
+  it("should render a <div />", () => {
+    expect(container.find("div").length).toEqual(2)
+  })
+  it("should render a <button />", () => {
+    expect(container.find("button").length).toEqual(1)
+  })
+})

@@ -40,6 +40,12 @@ export const Buttons: React.FC<Props> = ({
                 </div>
             ) : ( "" )
             }
+            {StatusR === "completed" ? (
+                <div>
+                    <button onClick={ResetR}><ReplayIcon style={{ fontSize: 40 }}/></button>
+                </div>
+            ) : ( "" )
+            }
             
         </div>
     )
