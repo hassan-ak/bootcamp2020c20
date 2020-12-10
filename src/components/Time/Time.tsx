@@ -18,7 +18,7 @@ export const Time: React.FC<Props> = ({Time,}) => {
                     {Time.s >= 10 ? Time.s : "0" + Time.s}.
                 </span>
                 <span className={Time.ms === 0 && Time.s === 0 && Time.m === 0 && Time.h === 0 ? "ms inActive" : "ms active"}>
-                    {Time.ms >= 100 ? Time.ms : Time.ms >= 10 ? "0" + Time.ms : "00" + Time.ms}
+                    {Time.ms >= 10 ? Time.ms : "0" + Time.ms}
                 </span>
             </p>
         </div>
